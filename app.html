@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AgendaPro • Painel</title>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b0f1a" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg">
+  <header class="topbar">
+    <div class="top-left">
+      <div class="mini-logo">AP</div>
+      <div class="top-title">
+        <strong>AgendaPro</strong>
+        <small id="tenantName">Carregando…</small>
+      </div>
+    </div>
+
+    <div class="top-actions">
+      <button id="btnLogout" class="btn ghost" type="button">Sair</button>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section class="grid">
+      <div class="card kpi">
+        <div class="kpi-label">Hoje</div>
+        <div class="kpi-value" id="kpiTotal">0</div>
+        <div class="kpi-sub">Agendamentos no dia</div>
+      </div>
+      <div class="card kpi">
+        <div class="kpi-label">Confirmados</div>
+        <div class="kpi-value" id="kpiConfirmados">0</div>
+        <div class="kpi-sub">Status CONFIRMADO</div>
+      </div>
+      <div class="card kpi">
+        <div class="kpi-label">Pendentes</div>
+        <div class="kpi-value" id="kpiPendentes">0</div>
+        <div class="kpi-sub">Status PENDENTE</div>
+      </div>
+    </section>
+
+    <section class="card panel">
+      <div class="panel-head">
+        <div>
+          <h2>Agenda</h2>
+          <p>Filtrada por data (economiza leituras no plano grátis).</p>
+        </div>
+
+        <div class="panel-controls">
+          <label class="field inline">
+            <span>Data</span>
+            <input id="filterDate" type="date" />
+          </label>
+          <button id="btnRefresh" class="btn ghost" type="button">Atualizar</button>
+        </div>
+      </div>
+
+      <div class="split">
+        <!-- Form -->
+        <div class="card inner">
+          <h3>Novo agendamento</h3>
+
+          <div class="two">
+            <label class="field">
+              <span>Cliente</span>
+              <input id="cliente" type="text" placeholder="Nome do cliente" />
+            </label>
+
+            <label class="field">
+              <span>WhatsApp (somente números)</span>
+              <input id="telefone" type="tel" placeholder="11999999999" inputmode="numeric" />
+            </label>
+          </div>
+
+          <div class="two">
+            <label class="field">
+              <span>Hora</span>
+              <input id="hora" type="time" />
+            </label>
+
+            <label class="field">
+              <span>Serviço</span>
+              <input id="servico" type="text" placeholder="Corte / Barba / Unha…" />
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Observações</span>
+            <input id="obs" type="text" placeholder="Ex: preferência, alergia, etc." />
+          </label>
+
+          <div class="actions">
+            <button id="btnSave" class="btn primary" type="button">Salvar</button>
+            <button id="btnClear" class="btn ghost" type="button">Limpar</button>
+          </div>
+
+          <div id="formMsg" class="msg"></div>
+        </div>
+
+        <!-- List -->
+        <div class="card inner">
+          <div class="list-head">
+            <h3>Agendamentos</h3>
+            <div class="hint">Toque no status para alternar PENDENTE/CONFIRMADO.</div>
+          </div>
+
+          <div id="list" class="list"></div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active" type="button">
+        <span class="nav-ic">📅</span><span>Agenda</span>
+      </button>
+      <button class="nav-item" type="button" disabled title="Fase 2">
+        <span class="nav-ic">👥</span><span>Clientes</span>
+      </button>
+      <button class="nav-item" type="button" disabled title="Fase 2">
+        <span class="nav-ic">📊</span><span>Relatórios</span>
+      </button>
+    </nav>
+
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

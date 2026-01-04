@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AgendaPro • Login</title>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b0f1a" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg">
+  <main class="shell">
+    <section class="card auth">
+      <div class="brand">
+        <div class="logo">AP</div>
+        <div>
+          <h1>AgendaPro</h1>
+          <p>Agendamentos com WhatsApp • PWA • Multi-salões</p>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" type="button">Entrar</button>
+      </div>
+
+      <label class="field">
+        <span>Email</span>
+        <input id="email" type="email" placeholder="seuemail@exemplo.com" autocomplete="username" />
+      </label>
+
+      <label class="field">
+        <span>Senha</span>
+        <input id="password" type="password" placeholder="••••••••" autocomplete="current-password" />
+      </label>
+
+      <button id="btnLogin" class="btn primary" type="button">
+        Entrar
+      </button>
+
+      <div class="row">
+        <button id="btnReset" class="btn ghost" type="button">Esqueci a senha</button>
+        <span class="hint">Implantação: você cria os usuários no Firebase.</span>
+      </div>
+
+      <div id="msg" class="msg" role="status"></div>
+    </section>
+
+    <footer class="foot">
+      <span>© <span id="year"></span> AgendaPro</span>
+      <span class="dot">•</span>
+      <span>Instalável no celular via navegador</span>
+    </footer>
+  </main>
+
+  <script type="module" src="auth.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
