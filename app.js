@@ -1,5 +1,5 @@
 // js/app.js
-import { firebaseConfig } from "./firebase-config.js";
+import { firebaseConfig } from "firebase-config.js";
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import {
@@ -268,6 +268,6 @@ onAuthStateChanged(auth, async (user) => {
 // Service Worker (PWA)
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("pwa/service-worker.js").catch(() => {});
+    navigator.serviceWorker.register("service-worker.js").catch(() => {});
   });
 }

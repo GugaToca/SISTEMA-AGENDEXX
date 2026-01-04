@@ -1,14 +1,14 @@
 // pwa/service-worker.js
-const CACHE = "agendapro-v1";
+const CACHE = "agendapro-v2";
 const ASSETS = [
   "/",
   "/index.html",
   "/app.html",
-  "/css/styles.css",
-  "/js/auth.js",
-  "/js/app.js",
-  "/js/firebase-config.js",
-  "/pwa/manifest.json"
+  "/styles.css",
+  "/auth.js",
+  "/app.js",
+  "/firebase-config.js",
+  "/manifest.json"
 ];
 
 self.addEventListener("install", (e) => {
