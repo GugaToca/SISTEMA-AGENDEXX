@@ -52,6 +52,6 @@ $("btnReset").addEventListener("click", async () => {
 // Service Worker (PWA)
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("pwa/service-worker.js").catch(() => {});
+    navigator.serviceWorker.register("service-worker.js").catch(() => {});
   });
 }
