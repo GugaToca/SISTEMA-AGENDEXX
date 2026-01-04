@@ -1,7 +1,7 @@
 // js/app.js
-import { firebaseConfig } from "firebase-config.js";
-
+import { firebaseConfig } from "./firebase-config.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+
 import {
   getFirestore, doc, getDoc, collection, addDoc,
   query, where, orderBy, getDocs, updateDoc, serverTimestamp
