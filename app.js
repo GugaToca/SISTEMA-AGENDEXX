@@ -236,6 +236,7 @@ async function loadDay() {
     const snap = await getDocs(q);
     const appts = [];
     snap.forEach(d => appts.push({ id: d.id, ...d.data() }));
+
     render(appts);
   } catch (e) {
     list.innerHTML = `<div class="msg bad">Erro ao carregar. Verifique índice/ordenação e regras.</div>`;
